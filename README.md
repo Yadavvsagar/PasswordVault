@@ -5,3 +5,4 @@ A simple website to securely store and search for passwords along with additiona
 - Store multiple passwords with associated information (e.g., username, access code).
 - Search passwords by keywords.
 - Redirect to the relevant stored password's details.
+![Uploading Screenshot (49).png…]()
