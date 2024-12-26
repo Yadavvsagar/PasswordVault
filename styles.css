@@ -1,0 +1,293 @@
+/* Body Style */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1f1f47, #6f42c1);
+    color: #fff;
+    height: 100%;
+}
+
+/* Top Bar Styling (Fixed Header) */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #1f1f47, #6f42c1);
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0 0 10px;
+    text-align: center;
+    color: #f5f5f5;
+}
+
+/* Search Bar Styling */
+.search-bar {
+    position: relative;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#searchInput {
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#suggestions {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    background: #2c2c54;
+    border-radius: 10px;
+    list-style: none;
+    padding: 10px 0;
+    display: none; /* Initially hidden */
+    z-index: 1000;
+}
+
+#suggestions li {
+    padding: 10px 15px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#suggestions li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Form Styling */
+.form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+input, button {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 250px;
+}
+
+button {
+    background: linear-gradient(135deg, #6f42c1, #1f1f47);
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Tile Container */
+.tile-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 200px; /* Space for fixed top-bar */
+}
+
+.tile {
+    background: linear-gradient(135deg, #1f1f47, #6f42c1);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.tile h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.tile p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #ddd;
+}
+
+.delete-icon {
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+.delete-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Show Suggestion Bar */
+#suggestions.show {
+    display: block;
+}
+.tile.highlight {
+    animation: glowEffect 1s ease-in-out;
+}
+
+@keyframes glowEffect {
+    0% {
+        background-color: #f0e68c; /* Light golden */
+    }
+    100% {
+        background-color: #fff;
+    }
+}
+
+.suggestion {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    list-style: none;
+    background-color: #f9f9f9;
+}
+
+.suggestion:hover {
+    background-color: #f0e68c; /* Light golden highlight on hover */
+}
+.tile.highlight {
+    animation: glowEffect 1s ease-in-out;
+}
+
+@keyframes glowEffect {
+    0% {
+        background-color: #f0e68c; /* Light golden */
+    }
+    100% {
+        background-color: #fff;
+    }
+}
+
+.suggestion {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    list-style: none;
+    background-color: #f9f9f9;
+}
+
+.suggestion:hover {
+    background-color: #f0e68c; /* Light golden highlight on hover */
+}
+
+.suggestions.show {
+    display: block;
+}
+/* Default style for the suggestion bar */
+#suggestions {
+    background-color: rgba(0, 0, 255, 0.5); /* Semi-transparent blue background */
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+    color: white; /* White text color */
+    border-radius: 5px;
+    list-style: none;
+    padding: 10px;
+    max-height: 300px; /* Limit height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-top: 5px;
+    display: none; /* Hidden by default, shown when search input is active */
+}
+
+/* Style for individual suggestion items */
+#suggestions .suggestion {
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    background-color: #9C4DFF; /* Soft violet color */
+    color: white; /* Text color */
+}
+
+/* Hover effect to change background color when hovering over a suggestion */
+#suggestions .suggestion:hover {
+    background-color: #7A32CC; /* Darker violet on hover */
+}
+
+/* Show the suggestion list when input is active */
+#suggestions.show {
+    display: block;
+}
+
+/* Glowing effect for the tile */
+.tile.glow {
+    box-shadow: 0 0 20px 5px rgba(122, 50, 204, 0.8); /* Glowing effect */
+    background-color: #7A32CC; /* Slightly darker background for the tile */
+}
+
+/* Normal style for tiles */
+.tile {
+    transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+/* Glowing effect for the tile with golden color */
+.tile.glow {
+    box-shadow: 0 0 30px 10px rgba(255, 223, 0, 0.9); /* Golden glow with a larger radius */
+    background-color: #7A32CC; /* Slightly darker background for the tile */
+    transform: scale(1.05); /* Tile "pops" slightly by increasing its size */
+}
+
+/* Normal style for tiles */
+.tile {
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+/* Make the Tab element transparent and keep its space */
+.tile p:first-child {
+    color: transparent; /* Make the text transparent */
+    font-size: 0; /* Optionally, make the font size 0 to remove any visible space occupied by the text */
+    visibility: hidden; /* Hides the element but keeps its space in the layout */
+}
+
+/* Keep the Accounts element visible */
+.tile p:last-child {
+    font-size: 16px; /* Set the font size as desired */
+    color: #fff; /* Set the text color */
+    display: block; /* Ensure it stays in place */
+}
+/* Make the "Tab" part invisible but keep its space */
+.tile p:first-of-type {
+    color: transparent; /* Make the text invisible */
+    font-size: 0; /* Optional: Make the text size 0 to avoid space occupied by text */
+    visibility: hidden; /* Keeps the space occupied by the element but makes it invisible */
+}
+
+/* Ensure the "Accounts" part remains visible */
+.tile p:last-of-type {
+    color: #fff; /* Keep the text color for the Accounts part */
+    font-size: 16px; /* Set font size for the Accounts part */
+    display: block; /* Ensure it displays normally */
+}
+
+/* Move the Accounts label a little up */
+.tile p strong {
+    display: inline-block;
+    position: relative;
+    top: -7px;  /* Adjust the value to move it upwards */
+}
+
